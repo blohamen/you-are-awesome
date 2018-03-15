@@ -27,7 +27,13 @@ const incrementor = () => {
     };
     return counter;
 };
-const asyncIncrementor = () => {};
+var asyncIncrementorRes = 0;
+const asyncIncrementor = () => {
+    return new Promise(function(resolve){
+        asyncIncrementorRes++;
+        return resolve(asyncIncrementorRes);
+    });
+};
 const createIncrementer = () => {};
 
 // return same argument not earlier than in one second, and not later, than in two
